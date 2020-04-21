@@ -51,3 +51,20 @@ and migrate them
 
 in admin.py = from .models import Item
 Then register the item = admin.site.register(Item)
+
+
+TESTING:
+
+to run tests = python3 manage.py test
+
+to be more specific of what we are testing = python3 manage.py test todo.test_forms
+a specific class of tests = python3 manage.py test todo.test_forms.TestItemForm
+or = python3 manage.py test todo.test_forms.TestItemForm.test_fields_are_explicit_in_form_metaclass
+
+COVERAGE:
+pip3 install coverage
+
+to run it = coverage run --source=todo manage.py test
+then = coverage report
+to get a html report = coverage html
+to view it = python3 -m http.server
