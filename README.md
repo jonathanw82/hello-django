@@ -148,7 +148,6 @@ else:
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 
-
 then 
 
 if development:
@@ -156,4 +155,7 @@ if development:
 else:
     ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
 
-    
+then change the secret key to a string
+go to google get a new key from django secret key gen then in settingsa like before add the secret key
+
+then create another for heroku 
