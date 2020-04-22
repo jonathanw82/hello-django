@@ -121,5 +121,5 @@ will let us see the logs error code H14 no web process running
 We need to now create a Procfile in the root to tell heroku that we want this to be a web application unicorn with a web server
 but we have not told unicorn to start yet in the Procfile put  = web: gunicorn django_todo.wsgi:application 
 
-in settings we have to add ALLOWED_HOSTS = [jonathanw82-django-todo-app.herokuapp.com]
+in settings we have to add ALLOWED_HOSTS = ['jonathanw82-django-todo-app.herokuapp.com']
 so heroku trusts this host
