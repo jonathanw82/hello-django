@@ -123,3 +123,37 @@ but we have not told unicorn to start yet in the Procfile put  = web: gunicorn d
 
 in settings we have to add ALLOWED_HOSTS = ['jonathanw82-django-todo-app.herokuapp.com']
 so heroku trusts this host
+
+push to heroku
+
+set up in heroku to auto update if the github repository is changed
+
+in settings add = development = os.environ.get('DEVELOPMENT', False)
+
+then change DEBUG from True to =development
+this means if the page in sopen in git pod debug is on and in heroku its off
+
+under database make if else statment to decide what databases to use we also have to set the enviroment variabale to True
+in work spaces page go to account, go to settings, add an eviro varable called development and set its value to True
+
+if development:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+
+
+then 
+
+if development:
+    ALLOWED_HOSTS = ['localhost']
+else:
+    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+
+    
