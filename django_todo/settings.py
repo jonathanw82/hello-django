@@ -26,7 +26,7 @@ SECRET_KEY = 'p$sycl&rlb(62qmkbd%74mv2qhbf%9ay&7azq4w16@k%5n2g-4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [jonathanw82-django-todo-app.herokuapp.com]
+ALLOWED_HOSTS = ['jonathanw82-django-todo-app.herokuapp.com']
 
 
 # Application definition
