@@ -68,3 +68,37 @@ to run it = coverage run --source=todo manage.py test
 then = coverage report
 to get a html report = coverage html
 to view it = python3 -m http.server
+
+Deployment 
+
+sql lite database can note be used as it gets lost every time it restarts to so we need to install Psycopg2
+pip3 install psycopg2-binary
+
+We also need a package called unicorn or green unicorn whitch will replace our deployment server when the app is deployed to heroku.
+It will act as our webserver = pip3 install unicorn
+
+make requirments = pip3 freeze --local > requirements.txt
+
+To create a heroku app = heroku apps:create jonathanw82-django-todo-app --region eu
+
+type heroku app to see list of apps = heroku apps
+
+Set up the Postgres as the database go to heroku in resources seatch postgres 
+select HobbyDev-free
+In config vars a new link to a database we can use will be available
+
+You can see it if you go to = heroku addons
+
+If you wanted to user this with myqsl you can use add on called clearDB instead the steps are the same.
+
+We need to install another package to connect to the remote database called djdburl = pip3 install dj_database_url
+
+To get the URL of the remote database = heroku config
+to show the database link urls
+
+in setting.py go to databases and change the default to =  'default': dj_database_url.parse()
+and add the link to the db urls
+
+then at the top of settings.py import it with = import os and import dh_database_url
+
+then = python3 manage.py migrate 
