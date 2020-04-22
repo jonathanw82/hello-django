@@ -102,3 +102,21 @@ and add the link to the db urls
 then at the top of settings.py import it with = import os and import dh_database_url
 
 then = python3 manage.py migrate 
+
+create .gitignore and add = *.sqlite3 and __pycashe__/
+
+push to git hub
+
+push to heroku = git push heroku master
+
+an error will happen Error while running '$ python manage.py collectstatic --noinput'.
+this is telling us heroku cant find any static files such as javascript or class
+
+to disable this  = heroku config:set DISABLE_COLLECTSTATIC=1
+then repush to heroku
+
+we will get another error is we try to run the app so = heroku logs --tail
+will let us see the logs error code H14 no web process running
+
+We need to now create a Procfile in the root to tell heroku that we want this to be a web application unicorn with a web server
+but we have not told unicorn to start yet in the Procfile put  = web: gunicorn django_todo.wsgi:application 
