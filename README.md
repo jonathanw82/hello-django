@@ -158,4 +158,4 @@ else:
 then change the secret key to a string
 go to google get a new key from django secret key gen then in settingsa like before add the secret key
 
-then create another for heroku 
+then create another for heroku and put it under config vars.
