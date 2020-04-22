@@ -110,7 +110,7 @@ push to git hub
 push to heroku = git push heroku master
 
 an error will happen Error while running '$ python manage.py collectstatic --noinput'.
-this is telling us heroku cant find any static files such as javascript or class
+this is telling us heroku cant find any static files such as javascript or css
 
 to disable this  = heroku config:set DISABLE_COLLECTSTATIC=1
 then repush to heroku
