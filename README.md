@@ -75,7 +75,7 @@ sql lite database can note be used as it gets lost every time it restarts to so 
 pip3 install psycopg2-binary
 
 We also need a package called unicorn or green unicorn whitch will replace our deployment server when the app is deployed to heroku.
-It will act as our webserver = pip3 install unicorn
+It will act as our webserver = pip3 install gunicorn
 
 make requirments = pip3 freeze --local > requirements.txt
 
